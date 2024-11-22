@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+    <!-- Site Introduction -->
+    <div class ="jumbotron text-center">
+        <h1>Welcome to SmartCart</h1>
+        <p>Your grocery gadget to find the cheapest prices from websites like:</p>
+        <div class="d-flex justify-content-center">
+            <img src="{{ url_for('static', filename='logos/amazon_logo.png') }}" alt="Amazon Logo" class="mx-3" style="width: 100px;">
+            <img src="{{ url_for('static', filename='logos/walmart_logo.png') }}" alt="Walmart Logo" class="mx-3" style="width: 100px;">
+            <img src="{{ url_for('static', filename='logos/safeway_logo.png') }}" alt="Safeway Logo" class="mx-3" style="width: 100px;">
+        </div>
+        <p class="mt-4 text-primary">
+          Please <a href="{{ url_for('login') }}" class="btn btn-primary btn-sm mx-1">Log In</a> or 
+          <a href="{{ url_for('register') }}" class="btn btn-primary btn-sm mx-1">Register</a> to start shopping!
+        </p>
+    </div>
+{% endblock content %}

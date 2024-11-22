@@ -1,0 +1,35 @@
+<!-- amazon.html -->
+{% extends "layout.html" %}
+{% block content %}
+<h1 class="my-4">Best Value Options</h1>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Total Price</th>
+            <th>Price Per Unit</th>
+            <th>Unit</th>
+            <th>Availability</th>
+            <th>Store</th>
+            <th>Link</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for product in products %}
+        <tr>
+            <td>{{ product.title }}</td>
+            <td>{{ product.total_price }}</td>
+            <td>{{ product.price_per_unit }}</td>
+            <td>{{ product.unit }}</td>
+            <td>{{ product.availability }}</td>
+            <td>{{product.source}}</td>
+            <td>
+                <a href = {{product.link}} target = "_blank">
+                    Link 
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

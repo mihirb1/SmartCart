@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Select Fruits</legend>
+                
+                <!-- Fruit Dropdown with Icons -->
+                <div class="form-group">
+                    {{ form.term.label(class="form-control-label") }}
+
+                    {% if form.term.errors %}
+                        <select name="term" class="form-control form-control-lg is-invalid">
+                            <option value="apple" style="background-image: url('/static/icons/apple.png');">🍎 Apple</option>
+                            <option value="banana" style="background-image: url('/static/icons/banana.png');">🍌 Banana</option>
+                            <option value="strawberry" style="background-image: url('/static/icons/strawberry.png');">🍓 Strawberry</option>
+                            <option value="orange" style="background-image: url('/static/icons/orange.png');">🍊 Orange</option>
+                            <option value="grape" style="background-image: url('/static/icons/grape.png');">🍇 Grape</option>
+                            <option value="watermelon" style="background-image: url('/static/icons/watermelon.png');">🍉 Watermelon</option>
+                            <option value="cherry" style="background-image: url('/static/icons/cherry.png');">🍒 Cherry</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            {% for error in form.term.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <select name="term" class="form-control form-control-lg">
+                            <option value="apple" style="background-image: url('/static/icons/apple.png');">🍎 Apple</option>
+                            <option value="banana" style="background-image: url('/static/icons/banana.png');">🍌 Banana</option>
+                            <option value="strawberry" style="background-image: url('/static/icons/strawberry.png');">🍓 Strawberry</option>
+                            <option value="orange" style="background-image: url('/static/icons/orange.png');">🍊 Orange</option>
+                            <option value="grape" style="background-image: url('/static/icons/grape.png');">🍇 Grape</option>
+                            <option value="watermelon" style="background-image: url('/static/icons/watermelon.png');">🍉 Watermelon</option>
+                            <option value="cherry" style="background-image: url('/static/icons/cherry.png');">🍒 Cherry</option>
+                        </select>
+                    {% endif %}
+                </div>
+
+                <!-- Class Name Input -->
+                <div class="form-group">
+                    {{ form.class_name.label(class="form-control-label") }}
+
+                    {% if form.class_name.errors %}
+                        {{ form.class_name(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.class_name.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.class_name(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                
+            </fieldset>
+            
+            <!-- Submit Button -->
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+        </form>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            Already Have An Account? <a class="ml-2" href="{{ url_for('login') }}">Sign In</a>
+        </small>
+    </div>
+{% endblock content %}
