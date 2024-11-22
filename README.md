@@ -36,7 +36,7 @@ pip install -r requirements.txt
    htpp://localhost:5000
 
 # **Data**
-- amazon_products1.csv: Contains all product data gathered through web scraping, including prices, product names, units, and availability.
+- amazon_products1.csv: Contains all product data gathered through web scraping, including prices, product names, units, and availability directly from the Amazon Grocery website at https://www.amazon.com/Fresh-Fruits/b?ie=UTF8&node=16318981.
 - Refer to SmartCart1: For details on web scraping logic, review the code in the SmartCart1 directory. It includes implementations using BeautifulSoup and Pandas for extracting and storing data into a SQL database.
 
 # **Contributors**
