@@ -26,7 +26,7 @@ pip install -r requirements.txt
 ```
 # **How to Run**
 1. Clone the repository to your local machine:
-   git clone https://github.com/your-username/SmartCart.git
+   git clone https://github.com/mihirb1/SmartCart.git
    cd SmartCart
 2. Install the required dependencies:
    pip install -r requirements.txt
