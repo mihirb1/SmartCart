@@ -18,7 +18,7 @@ SmartCart has the following dependencies, which are listed in the `requirements.
 - **BeautifulSoup4**: For web scraping HTML data.
 - **Requests**: For making HTTP requests to fetch data.
 - **Pandas**: For handling and analyzing tabular data.
-- **Selenium (optional)**: For scraping JavaScript-rendered websites.
+- **WebScraper extension**: For scraping JavaScript-rendered websites.
 
 To install all required dependencies, run:
 ```bash
