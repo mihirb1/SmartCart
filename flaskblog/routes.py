@@ -236,7 +236,12 @@ def input_classes():
 def amazon():
     searchQuery = request.args.get('search')
     print(searchQuery)
-    products = Products.query.filter(Products.title.like(f"%{searchQuery}%")).filter(Products.unit!="unknown").order_by(Products.total_price.asc()).limit(5).all()
+    products = Products.query.filter(Products.title.like(f"%{searchQuery}%")).filter(Products.unit!="unknown").order_by(Products.total_price.asc()).limit(10).all()
     # displays all products with specific search
     #products = Products.query.filter(Products.title.like(f"%{searchQuery}%")).filter(Products.unit!="unknown").order_by(Products.total_price.asc()).all()
     return render_template('amazon.html', title='Amazon Products', products=products)
+
+@app.route('/view_maps')
+def view_maps():
+    store = request.args.get('store')
+    return render_template('view_maps.html', store=store)

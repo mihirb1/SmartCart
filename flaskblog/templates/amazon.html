@@ -22,10 +22,14 @@
             <td>{{ product.price_per_unit }}</td>
             <td>{{ product.unit }}</td>
             <td>{{ product.availability }}</td>
-            <td>{{product.source}}</td>
             <td>
-                <a href = {{product.link}} target = "_blank">
-                    Link 
+                <a href="{{ url_for('view_maps', store=product.source) }}">
+                    {{ product.source }}
+                </a>
+            </td>
+            <td>
+                <a href="{{ product.link }}" target="_blank">
+                    Link
                 </a>
             </td>
         </tr>

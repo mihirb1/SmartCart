@@ -1,14 +1,11 @@
 body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     background: #fafafa;
     color: #333333;
     margin-top: 5rem;
   }
-  .jumbotron text-center {
-    max-width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
   
   h1, h2, h3, h4, h5, h6 {
     color: #444444;
@@ -16,6 +13,7 @@ body {
   
   .bg-steel {
     background-color: #5f788a;
+
   }
   
   .site-header .navbar-nav .nav-link {
@@ -141,3 +139,7 @@ select option[value="cherry"] {
   border-radius: 10px; /* Optional rounded corners */
   background-color: #f8f9fa; /* Optional background color for the jumbotron */
 }
+.container {
+  margin: 0 auto;
+}
+

@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="content-section">
+    <h2 class="mb-4">Grocery Stores for {{ store }}</h2>
+    <div id="map" style="height: 500px; width: 100%;"></div>
+</div>
+
+<script>
+    function initMap() {
+        // Define the starting location (762 Chopin Drive, Sunnyvale, CA)
+        const startingLocation = { lat: 37.3688, lng: -122.0363 }; // Coordinates for Sunnyvale, CA
+
+        // Create the map
+        const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 12,
+            center: startingLocation,
+        });
+
+        // Use the store name from Flask
+        const store = "{{ store }}";
+
+        // Search for nearby stores using PlacesService
+        const service = new google.maps.places.PlacesService(map);
+
+        // Perform a text search for the store name
+        service.textSearch({ query: store, location: startingLocation, radius: 5000 }, function (results, status) {
+            if (status === google.maps.places.PlacesServiceStatus.OK) {
+                for (let i = 0; i < results.length; i++) {
+                    const place = results[i];
+                    new google.maps.Marker({
+                        position: place.geometry.location,
+                        map: map,
+                        title: place.name,
+                    });
+                }
+
+                // Re-center the map on the first result
+                if (results[0]) {
+                    map.setCenter(results[0].geometry.location);
+                }
+            }
+        });
+    }
+
+    // Load the map script with the callback
+    window.initMap = initMap;
+</script>
+<script async
+    defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDm-kHtEIsMQMo_VkGQ3pWDz_eu7S9O-0&libraries=places&callback=initMap">
+</script>
+{% endblock %}

@@ -14,9 +14,9 @@
 
 
     {% if title %}
-        <title>Smart Cart - {{ title }}</title>
+        <title>SmartCart - {{ title }}</title>
     {% else %}
-        <title>Smart Cart</title>
+        <title>SmartCart</title>
     {% endif %}
 </head>
 <body>
@@ -24,7 +24,7 @@
     <header class="site-header">
       <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
         <div class="container">
-          <a class="navbar-brand mr-4" href="/">Smart Cart</a>
+          <a class="navbar-brand mr-4" href="/">SmartCart</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -54,7 +54,7 @@
     </header>
     <main role="main" class="container">
       <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-12">
           <!--displays success message when login is successfull-->
           {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
